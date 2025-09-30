@@ -15,14 +15,14 @@ Original file is located at
 # !pip install spacy
 # !python -m spacy download en_core_web_sm
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
 import zipfile
 import os
 
-zip_path = "/content/drive/MyDrive/resume_dataset.zip"
-extract_path = "/content/drive/MyDrive/resume_dataset_unzipped"
+# zip_path = "/content/drive/MyDrive/resume_dataset.zip"
+# extract_path = "/content/drive/MyDrive/resume_dataset_unzipped"
 
 # Create output folder if not exists
 os.makedirs(extract_path, exist_ok=True)
@@ -89,7 +89,7 @@ def read_pdf(file_path):
 
 data = []
 # Replace with the path to your folder in Google Drive
-root_dir = "/content/drive/MyDrive/resume_dataset_unzipped"
+# root_dir = "/content/drive/MyDrive/resume_dataset_unzipped"
 
 if not os.path.exists(root_dir):
     print(f"Error: The directory '{root_dir}' does not exist.")
@@ -563,6 +563,15 @@ def load_model():
         return None, None
 
 pipeline, label_encoder = load_model()
+
+import streamlit as st
+
+uploaded_files = st.file_uploader("Upload resumes", type=["pdf", "docx"], accept_multiple_files=True)
+
+for file in uploaded_files:
+    st.write("Processing:", file.name)
+    # Add your resume parsing logic here
+
 
 # --- Helper function to read file content ---
 def get_text_from_file(file):
