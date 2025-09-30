@@ -8,12 +8,12 @@ Original file is located at
 """
 
 #used to install a library called python-docx
-!pip install python-docx PyPDF2
+# !pip install python-docx PyPDF2
 
-!sudo apt-get install antiword
+# !sudo apt-get install antiword
 
-!pip install spacy
-!python -m spacy download en_core_web_sm
+# !pip install spacy
+# !python -m spacy download en_core_web_sm
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -127,7 +127,7 @@ df = pd.DataFrame(data)
 print("\nFinal DataFrame:")
 print(df)
 
-!ls "/content/drive/MyDrive/resume_dataset_unzipped"
+# !ls "/content/drive/MyDrive/resume_dataset_unzipped"
 
 print("\nFinal DataFrame:")
 print(df)
@@ -530,7 +530,7 @@ predicted_role = loaded_label_encoder.inverse_transform(prediction_encoded)[0]
 
 """
 
-!pip install streamlit
+# !pip install streamlit
 
 import streamlit as st
 import joblib
